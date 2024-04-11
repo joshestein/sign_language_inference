@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "@fsouza/prettierd": "^0.25.2",
+    "typescript": "^5.4.5"
+  }
+}
