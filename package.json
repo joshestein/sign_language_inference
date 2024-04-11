@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "@fsouza/prettierd": "^0.25.2",
+    "@tensorflow/tfjs": "^4.17.0",
     "typescript": "^5.4.5"
   }
 }
