@@ -5,7 +5,8 @@
     video = document.getElementById("video") as HTMLVideoElement;
 
     navigator.mediaDevices
-      .getUserMedia({ video: true, audio: false })
+      // facingMode refers to front-facing "user" or backwards-facing "environment" camera
+      .getUserMedia({ video: { facingMode: "user" }, audio: false })
       .then((stream) => {
         if (!video) return;
 
