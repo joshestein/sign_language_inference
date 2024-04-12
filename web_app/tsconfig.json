@@ -1,15 +1,32 @@
 {
   "compilerOptions": {
-    "target": "es2020",
-    "outDir": "./build",
-    "rootDir": "./src",
-    "moduleResolution": "Node",
-    "strict": true,
+    "allowJs": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": [
+      "es2022",
+      "dom",
+      "dom.iterable"
+    ],
+    "module": "NodeNext",
+    "moduleDetection": "force",
+    //    "moduleResolution": "Node",
     "noImplicitAny": true,
     "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "outDir": "dist",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2022"
   },
+  "exclude": [
+    "node_modules"
+  ],
   "include": [
-    "./src/**/*"
+    "src/**/*.ts",
+    "test/**/*.ts"
   ]
 }
