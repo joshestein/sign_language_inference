@@ -15,3 +15,13 @@ body {
     font-family: var(--font);
     margin: 1rem;
 }
+
+video {
+    /*clear: both;*/
+    /*display: block;*/
+    transform: rotateY(180deg);
+}
+
+.canvas {
+    transform: rotateY(180deg);
+}
