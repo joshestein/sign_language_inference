@@ -2,18 +2,15 @@
   "type": "module",
   "devDependencies": {
     "@fsouza/prettierd": "^0.25.2",
-    "esbuild": "0.20.2",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "vite": "^5.2.8"
   },
   "dependencies": {
     "@mediapipe/tasks-vision": "^0.10.12"
   },
   "scripts": {
-    "build": "esbuild src/index.ts --bundle --format=esm --outfile=dist/index.js",
-    "start": "esbuild src/index.ts --platform=node --format=esm --outdir=dist --watch --serve",
-    "dev": "pnpm run \"/dev:/\"",
-    "dev:tsc": "tsc --watch",
-    "dev:node": "node --watch dist/index.js",
-    "dev:esbuild": "npm run build --watch"
+    "build": "npx tsc && npx vite build",
+    "start": "npx vite",
+    "preview": "npx vite preview"
   }
 }
