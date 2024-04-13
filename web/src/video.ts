@@ -6,6 +6,8 @@ import { Model } from "./model.js";
   const ctx = canvas.getContext("2d");
   const model = new Model(ctx!);
 
+  let lastPredictionTime = -1;
+
   function runInference() {
     if (!video) return;
     if (!ctx) return;
@@ -14,8 +16,12 @@ import { Model } from "./model.js";
     canvas.height = video.videoHeight;
 
     let startTimeMs = performance.now();
-    const results = model.handLandmarker?.detectForVideo(video, startTimeMs);
-    model.drawPredictions(results);
+    // Update predictions every 20ms
+    if (startTimeMs - lastPredictionTime > 20) {
+      const results = model.handLandmarker?.detectForVideo(video, startTimeMs);
+      model.drawPredictions(results);
+      lastPredictionTime = startTimeMs;
+    }
 
     window.requestAnimationFrame(runInference);
   }
