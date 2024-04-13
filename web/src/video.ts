@@ -19,7 +19,7 @@ import { Model } from "./model.js";
     // Update predictions every 20ms
     if (startTimeMs - lastPredictionTime > 20) {
       const results = model.handLandmarker?.detectForVideo(video, startTimeMs);
-      model.drawPredictions(results);
+      model.drawResults(results);
       lastPredictionTime = startTimeMs;
     }
 

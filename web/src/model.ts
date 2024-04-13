@@ -31,7 +31,7 @@ export class Model {
     // demosSection.classList.remove("invisible");
   }
 
-  drawPredictions(results?: HandLandmarkerResult) {
+  drawResults(results?: HandLandmarkerResult) {
     for (const landmarks of results?.landmarks || []) {
       this.drawingUtils.drawConnectors(
         landmarks,
