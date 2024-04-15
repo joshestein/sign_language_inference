@@ -68,7 +68,7 @@ export class Model {
     }
   }
 
-  findClosestLetter(results?: HandLandmarkerResult) {
+  findClosestLetter(results?: HandLandmarkerResult): string | undefined {
     const landmarks = results?.landmarks[0];
     if (!landmarks) return;
 
@@ -85,7 +85,7 @@ export class Model {
         minimumDistance = distance;
       }
     }
-    console.log(closestLetter);
+    return closestLetter;
   }
 
   private scaleKeypointResults(results: NormalizedLandmark[]) {
