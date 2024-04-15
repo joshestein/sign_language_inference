@@ -20,6 +20,7 @@ import { Model } from "./model";
     if (startTimeMs - lastPredictionTime > 20) {
       const results = model.handLandmarker?.detectForVideo(video, startTimeMs);
       model.drawResults(results);
+      model.findClosestLetter(results);
       lastPredictionTime = startTimeMs;
     }
 
