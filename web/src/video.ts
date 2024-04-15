@@ -6,6 +6,7 @@ import { Model } from "./model";
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
 
+  const letterDiv = document.getElementById("letter-result");
   const model = new Model(ctx);
 
   let lastPredictionTime = -1;
@@ -21,8 +22,9 @@ import { Model } from "./model";
     if (startTimeMs - lastPredictionTime > 20) {
       const results = model.handLandmarker?.detectForVideo(video, startTimeMs);
       model.drawResults(results);
-      model.findClosestLetter(results);
+      const letter = model.findClosestLetter(results);
       lastPredictionTime = startTimeMs;
+      if (letterDiv) letterDiv.textContent = letter || "";
     }
 
     window.requestAnimationFrame(runInference);

@@ -25,3 +25,12 @@ video {
 .canvas {
     transform: rotateY(180deg);
 }
+
+.result-row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#letter-result {
+    font-size: 5rem;
+}
