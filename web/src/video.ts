@@ -4,13 +4,14 @@ import { Model } from "./model";
   let video: HTMLVideoElement | null = null;
   const canvas = document.getElementById("canvas") as HTMLCanvasElement;
   const ctx = canvas.getContext("2d");
-  const model = new Model(ctx!);
+  if (!ctx) return;
+
+  const model = new Model(ctx);
 
   let lastPredictionTime = -1;
 
   function runInference() {
     if (!video) return;
-    if (!ctx) return;
 
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
