@@ -88,6 +88,7 @@ export class Model {
     return closestLetter;
   }
 
+  /** Normalise a list of keypoints between the min and max of each dimension (x, y, z) */
   private scaleKeypointResults(results: NormalizedLandmark[]) {
     let x_min = Infinity;
     let y_min = Infinity;
