@@ -53,14 +53,10 @@ export class Model {
 
   drawResults(results?: HandLandmarkerResult) {
     for (const landmarks of results?.landmarks || []) {
-      this.drawingUtils.drawConnectors(
-        landmarks,
-        HandLandmarker.HAND_CONNECTIONS,
-        {
-          color: "#00FF00",
-          lineWidth: 5,
-        },
-      );
+      this.drawingUtils.drawConnectors(landmarks, HandLandmarker.HAND_CONNECTIONS, {
+        color: "#00FF00",
+        lineWidth: 5,
+      });
       this.drawingUtils.drawLandmarks(landmarks, {
         color: "#000000",
         lineWidth: 2,
@@ -115,11 +111,7 @@ export class Model {
     }
   }
 
-  private findDistance(
-    first: KeyPoint[],
-    second: KeyPoint[],
-    numKeyPoints = 21,
-  ): number {
+  private findDistance(first: KeyPoint[], second: KeyPoint[], numKeyPoints = 21): number {
     let distance = 0;
     for (let i = 0; i < numKeyPoints; i++) {
       const x_diff = Math.pow((first[i]?.x || 0) - (second[i]?.x || 0), 2);
