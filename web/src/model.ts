@@ -11,11 +11,24 @@ import c from "../src/letter_keypoints/c.json";
 import d from "../src/letter_keypoints/d.json";
 import e from "../src/letter_keypoints/e.json";
 import f from "../src/letter_keypoints/f.json";
+import g from "../src/letter_keypoints/g.json";
 import h from "../src/letter_keypoints/h.json";
 import i from "../src/letter_keypoints/i.json";
 import k from "../src/letter_keypoints/k.json";
 import l from "../src/letter_keypoints/l.json";
 import m from "../src/letter_keypoints/m.json";
+import n from "../src/letter_keypoints/n.json";
+import o from "../src/letter_keypoints/o.json";
+import p from "../src/letter_keypoints/p.json";
+import q from "../src/letter_keypoints/q.json";
+import r from "../src/letter_keypoints/r.json";
+import s from "../src/letter_keypoints/s.json";
+import t from "../src/letter_keypoints/t.json";
+import u from "../src/letter_keypoints/u.json";
+import v from "../src/letter_keypoints/v.json";
+import w from "../src/letter_keypoints/w.json";
+import x from "../src/letter_keypoints/x.json";
+import y from "../src/letter_keypoints/y.json";
 
 type KeyPoint = {
   x: number;
@@ -31,7 +44,8 @@ export class Model {
   constructor(ctx: CanvasRenderingContext2D) {
     this.load();
     this.drawingUtils = new DrawingUtils(ctx);
-    this.keypoints = { a, b, c, d, e, f, h, i, k, l, m };
+    // prettier-ignore
+    this.keypoints = { a, b, c, d, e, f, g, h, i, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y };
   }
 
   private async load() {
