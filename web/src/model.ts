@@ -82,7 +82,7 @@ export class Model {
     const landmarks = results?.landmarks[0];
     if (!landmarks) return;
 
-    this.scaleKeypointResults(landmarks);
+    this.normaliseKeypoints(landmarks);
     let closestLetter;
     let minimumDistance = Infinity;
     for (const letter in this.keypoints) {
@@ -99,7 +99,7 @@ export class Model {
   }
 
   /** Normalise a list of keypoints between the min and max of each dimension (x, y, z) */
-  private scaleKeypointResults(results: NormalizedLandmark[]) {
+  private normaliseKeypoints(results: NormalizedLandmark[]) {
     let x_min = Infinity;
     let y_min = Infinity;
     let z_min = Infinity;
