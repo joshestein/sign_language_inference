@@ -125,9 +125,10 @@ export class Model {
     }
   }
 
-  private findDistance(first: KeyPoint[], second: KeyPoint[], numKeyPoints = 21): number {
+  /** Compute average 3D Euclidean distance between two sets of keypoints. Assumes both sets of keypoints have the same length. */
+  private findDistance(first: KeyPoint[], second: KeyPoint[]): number {
     let distance = 0;
-    for (let i = 0; i < numKeyPoints; i++) {
+    for (let i = 0; i < first.length; i++) {
       const x_diff = Math.pow((first[i]?.x || 0) - (second[i]?.x || 0), 2);
       const y_diff = Math.pow((first[i]?.y || 0) - (second[i]?.y || 0), 2);
       const z_diff = Math.pow((first[i]?.z || 0) - (second[i]?.z || 0), 2);
@@ -135,6 +136,6 @@ export class Model {
       distance += x_diff + y_diff + z_diff;
     }
 
-    return distance / (numKeyPoints * 3);
+    return distance / (first.length * 3);
   }
 }
